@@ -1,0 +1,3 @@
+/*
+!/Barangay_inquirer_system/
+!.gitignore
