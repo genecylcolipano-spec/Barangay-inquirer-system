@@ -1,0 +1,17 @@
+.admin-sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: #1e1e2f;
+}
+
+.admin-sidebar a {
+    display: block;
+    color: #ccc;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+
+.admin-sidebar a:hover {
+    background: #0d6efd;
+    color: #fff;
+}

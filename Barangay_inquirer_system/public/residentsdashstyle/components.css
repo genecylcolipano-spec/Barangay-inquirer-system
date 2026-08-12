@@ -1,0 +1,299 @@
+/* ================================
+   GLOBAL COMPONENT STYLES
+   ================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+/* ================================
+   DASHBOARD CARDS
+   ================================ */
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+    overflow: hidden;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-body {
+    padding: clamp(14px, 2vw, 30px);
+}
+
+/* ================================
+   TABLE INSIDE CARDS
+   ================================ */
+
+.card .table {
+    margin-bottom: 0;
+}
+
+.card .table thead {
+    background: #f8f9fc;
+    border-bottom: 2px solid #e8ecf1;
+}
+
+.card .table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.card .table tbody tr:hover {
+    background: #f8f9fc;
+}
+
+.card .table td,
+.card .table th {
+    padding: clamp(8px, 1.2vw, 16px) 15px;
+    vertical-align: middle;
+    font-size: clamp(.82rem, .9vw, .92rem);
+    color: #2c3e50;
+}
+
+.card .table th {
+    font-weight: 600;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+}
+
+/* ================================
+   BADGES
+   ================================ */
+
+.badge {
+    font-size: clamp(.68rem, .8vw, .75rem);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+/* Standard Bell Notification Badge */
+.btn-light.position-relative .badge,
+#notificationBadgeContainer {
+    width: 1.45rem;
+    height: 1.45rem;
+    min-width: 1.45rem;
+    font-size: 0.675rem;
+    line-height: 1.45rem;
+    padding: 0;
+    border-radius: 50%;
+    transform: translate(15%, -15%);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+}
+
+.badge-success {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    color: white;
+}
+
+.badge-danger {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+}
+
+.badge-warning {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+}
+
+.badge-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* ================================
+   BUTTONS
+   ================================ */
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 0.95em;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #2c3e50;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   FORMS
+   ================================ */
+
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    outline: none;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* ================================
+   ALERTS
+   ================================ */
+
+.alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.alert-success {
+    background: rgba(132, 250, 176, 0.1);
+    border: 1px solid rgba(132, 250, 176, 0.3);
+    color: #27ae60;
+}
+
+.alert-danger {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: #c0392b;
+}
+
+.alert-warning {
+    background: rgba(250, 112, 154, 0.1);
+    border: 1px solid rgba(250, 112, 154, 0.3);
+    color: #e67e22;
+}
+
+.alert-info {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    color: #2980b9;
+}
+
+/* ================================
+   LOADING SPINNER
+   ================================ */
+
+.spinner-border {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: text-bottom;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================================
+   PAGINATION
+   ================================ */
+
+.pagination {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.pagination .page-link {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #667eea;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background: #667eea;
+    color: white;
+}
+
+.pagination .page-link.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+/* ================================
+   MOBILE OPTIMIZATION
+   ================================ */
+
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+        border-radius: 12px;
+    }
+
+    .card-body {
+        padding: 14px;
+    }
+
+    .card .table td,
+    .card .table th {
+        padding: 8px 6px;
+        font-size: .8rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .alert {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+

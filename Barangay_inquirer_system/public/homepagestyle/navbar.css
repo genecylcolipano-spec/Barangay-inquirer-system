@@ -1,0 +1,289 @@
+/* Variables */
+:root {
+    --primary: #3b82f6;
+    --accent: #1d4ed8;
+    --text-dark: #1f2937;
+    --text-gray: #6b7280;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Navbar Fixes */
+.main-navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1060;
+    transition: var(--transition);
+    padding: 12px 0;
+}
+
+/* Scrolled State */
+.main-navbar.scrolled {
+    padding: 6px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Brand & Logo */
+.navbar-logo {
+    transition: var(--transition);
+}
+
+.main-navbar.scrolled .navbar-logo {
+    height: 35px !important;
+}
+
+.brand-text {
+    color: var(--text-dark);
+    transition: var(--transition);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 65vw;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.brand-text-responsive {
+    max-width: 300px;
+    display: inline-block;
+}
+
+.main-navbar .navbar-brand {
+    min-width: 0;
+    overflow: hidden;
+    flex: 1 1 auto;
+}
+
+/* Navigation Links */
+.nav-link {
+    color: var(--text-gray) !important;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--primary) !important;
+}
+
+/* Navbar Toggler (Hamburger Menu) */
+.navbar-toggler {
+    padding: 6px 10px !important;
+    border: 2px solid transparent !important;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    border-color: var(--primary) !important;
+}
+
+.navbar-toggler:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+    border-color: var(--primary) !important;
+}
+
+.navbar-toggler i {
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.navbar-toggler:hover i {
+    color: var(--primary);
+}
+
+/* Custom Button Styling to match your Variables */
+.btn-primary, .btn-signup-custom, .btn-dashboard {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    transition: var(--transition) !important;
+    padding: 10px 20px !important;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    border-radius: 6px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    height: auto;
+    min-height: 40px;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    background-color: transparent !important;
+    padding: 10px 20px !important;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    border-radius: 6px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    height: auto;
+    min-height: 40px;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Login & Register Button Container */
+.btn-login-custom,
+.btn-signup-custom {
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.btn-login-custom:hover {
+    background-color: var(--accent) !important;
+    color: white !important;
+}
+
+/* ========================================
+   RESPONSIVE & ANIMATIONS
+   ======================================== */
+
+/* Fade-out effect when clicking menu items */
+.fade-out-close {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: white;
+        margin-top: 10px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    /* Animation when opening */
+    .collapse.show {
+        animation: slideInMenu 0.3s ease-out forwards;
+    }
+
+    .nav-link {
+        padding: 12px 0 !important;
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    .navbar-nav .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+
+    /* Mobile buttons - full width with better spacing */
+    .button-container {
+        width: 100% !important;
+    }
+
+    .btn-login-custom,
+    .btn-signup-custom,
+    .btn-dashboard {
+        width: 100% !important;
+        padding: 12px 16px !important;
+        margin-top: 8px;
+    }
+
+    .btn-login-custom:first-of-type {
+        margin-top: 12px;
+    }
+}
+
+/* Large Screens (Laptops/Desktops) */
+@media (min-width: 992px) {
+    .container-fluid {
+        max-width: 1320px;
+    }
+    
+    .navbar-nav {
+        gap: 10px;
+    }
+
+    /* Desktop button container - prevent overlapping */
+    .button-container {
+        gap: 14px !important;
+        flex-wrap: nowrap;
+    }
+
+    .btn-login-custom,
+    .btn-signup-custom,
+    .btn-dashboard {
+        width: auto !important;
+        padding: 10px 22px !important;
+        min-width: 120px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-fluid {
+        max-width: 1320px;
+    }
+    
+    .navbar-nav {
+        gap: 10px;
+    }
+
+    /* Extra large screens - increase button spacing */
+    .button-container {
+        gap: 18px !important;
+    }
+
+    .btn-login-custom,
+    .btn-signup-custom,
+    .btn-dashboard {
+        padding: 10px 24px !important;
+        min-width: 130px;
+    }
+}
+
+@keyframes slideInMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .brand-text { 
+        font-size: 0.85rem; 
+        max-width: 160px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.2;
+    }
+
+    .navbar-brand {
+        min-width: 0;
+        width: auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+}
+
+/* Medium Phones to Tablets */
+@media (max-width: 768px) {
+    .brand-text-responsive {
+        max-width: 220px;
+    }
+}

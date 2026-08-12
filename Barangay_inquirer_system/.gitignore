@@ -1,0 +1,74 @@
+*.log
+.DS_Store
+.env
+.env.example
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/storage/app/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+bootstrap/cache/*.php
+/vendor
+Homestead.json
+Homestead.yaml
+Thumbs.db
+# Sensitive admin guides & implementation notes
+ADMIN_*
+LOGIN_*
+PASSWORD_*
+SUPERADMIN_*
+RATE_*
+RLS_*
+REDIRECT_*
+
+# Checklists, test files & internal working docs
+check_*
+test_*
+create_*
+list_*
+mark_*
+show_*
+
+# Private folder & temp/extra files
+# Code Citations/
+*.result.cache
+phpunit
+composer
+package
+vite.config.js
+
+# Additional private docs & editor
+*.md
+!.gitignore
+!.editorconfig
+!.gitattributes
+!README.md
+.vscode/
+*.lnk
+reset.sql
+PLAN.md
+TODO.md
+# External docs at this level
+*.md
+!.gitignore
+!.editorconfig
+!.gitattributes
+!Barangay_inquirer_system/README.md
+.vscode/

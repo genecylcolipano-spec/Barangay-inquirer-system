@@ -1,0 +1,34 @@
+/* Global styles */
+body {
+    background: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* HERO SECTION */
+.hero {
+    background: #0d6efd;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* SECTION PADDING */
+.section-padding {
+    padding: 60px 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
