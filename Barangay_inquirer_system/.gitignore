@@ -72,13 +72,12 @@ TODO.md
 !.gitattributes
 !Barangay_inquirer_system/README.md
 .vscode/
-# Ignore ALL markdown files here
+# Ignore ALL markdown files at this root level
 *.md
-# Keep only these
+# Keep only these required files
 !.gitignore
 !.editorconfig
 !.gitattributes
-# Keep the project folder content
-Barangay_inquirer_system/
-.vscode/
+# Ignore extra files/folders
 *.lnk
+.vscode/
