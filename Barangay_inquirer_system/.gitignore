@@ -81,3 +81,7 @@ TODO.md
 # Ignore extra files/folders
 *.lnk
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
