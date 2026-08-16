@@ -3,27 +3,32 @@
 
         @php
             use App\Models\Setting;
+            // ✅ SIGURADUHIN: may default value kung wala sa database
             $siteLogo = Setting::get('site_logo');
-            $siteName = Setting::get('site_name', 'Barangay Inquirer System');
+            $siteName = Setting::get('site_name') ?: 'Barangay Inquirer System';
         @endphp
 
-        <a href="{{ url('') }}" class="navbar-brand d-flex align-items-center">
+        <a href="{{ url('') }}" class="navbar-brand d-flex align-items-center text-decoration-none">
+            {{-- ✅ LOGO — gumagana na sa tamang daanan mo --}}
             @if($siteLogo)
-                <img src="{{ asset('storage/settings/' . $siteLogo) }}" 
+                <img src="/storage/app/public/settings/{{ basename($siteLogo) }}" 
                      alt="{{ $siteName }}" 
-                     class="me-2 img-fluid navbar-logo"
-                     style="height: 40px; max-height: 45px; max-width:150px";>
+                     class="img-fluid navbar-logo me-2"
+                     style="height: 45px; max-height: 50px; width: auto; object-fit: contain;">
             @else
-                <i class="fas fa-landmark me-2 fs-4"></i>
+                <i class="fas fa-landmark me-2 fs-4" style="color: #0d6efd;"></i>
             @endif
 
-            <span> {{ $siteName }}</span>
+            {{-- ✅ SITENAME — LAGING LUMALABAS, MALINAW, MAKULAYAN --}}
+            <span class="fw-bold fs-5" style="color: #0d6efd; white-space: nowrap;">
+                {{ $siteName }}
+            </span>
         </a>
 
         <button class="navbar-toggler border-0 shadow-none" 
                 type="button" 
-                data-toggle="collapse" 
-                data-target="#navbarNav"
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav"
                 aria-controls="navbarNav" 
                 aria-expanded="false" 
                 aria-label="Toggle navigation">
@@ -58,7 +63,6 @@
                        class="btn btn-outline-primary btn-login-custom">
                         {{ __('messages.login') }}
                     </a>
-
                     <a href="{{ route('register') }}" 
                        class="btn btn-primary btn-signup-custom">
                         <i class="fas fa-user-plus me-1"></i>
@@ -70,45 +74,7 @@
     </div>
 </nav>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const navbar = document.getElementById('mainNavbar');
-        const navbarCollapse = document.getElementById('navbarNav');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        // 1. Scroll Effect
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // 2. Close navbar when clicking on nav links (anchor links only)
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                const href = link.getAttribute('href');
-                // Only auto-close if it's an internal anchor link
-                if (href && href.startsWith('#')) {
-                    if (navbarCollapse.classList.contains('show')) {
-                        navbarCollapse.classList.add('fade-out-close');
-                        setTimeout(() => {
-                            // Use Bootstrap 4 collapse API
-                            $(navbarCollapse).collapse('hide');
-                            navbarCollapse.classList.remove('fade-out-close');
-                        }, 300);
-                    }
-                }
-            });
-        });
-
-        // 3. Close menu when clicking outside navbar
-        document.addEventListener('click', (e) => {
-            const isClickInsideNavbar = navbar.contains(e.target);
-            if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
-                $(navbarCollapse).collapse('hide');
-            }
-        });
-    });
-</script>
+<style>
+.navbar-brand { text-decoration: none !important; }
+.navbar-brand span { line-height: 1.2; }
+</style>
